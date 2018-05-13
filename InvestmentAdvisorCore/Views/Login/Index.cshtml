@@ -1,0 +1,16 @@
+ <div class="container" ng-controller="controllerLogin">
+    <div class="card card-container">
+        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+        <img id="profile-img" class="profile-img-card" src="~/images/avatar.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+
+        <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+
+            <input ng-model="loginEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input ng-model="loginPassword" type="password" class="form-control" placeholder="Password" required style="margin-top:10px">
+            
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ng-click="logarSistema()" style="margin-top:10px">Login</button>
+        </form><!-- /form -->
+    </div><!-- /card-container -->
+</div><!-- /container -->

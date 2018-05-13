@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Implementação_INVAD_core.Controllers
 {
-    public class HomeController : Controller
+    public class InvestimentosRealizadosController : Controller
     {
         public IActionResult Index()
         {
