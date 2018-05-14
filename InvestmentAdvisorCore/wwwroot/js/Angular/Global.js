@@ -80,6 +80,19 @@ app.directive('selectWatcher', ['$timeout', '$rootScope', function ($timeout, $r
     };
 }]);
 
+//Diretiva para adiconar botão na bootstrap table
+app.directive('buttonTable', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
+    return {
+        link: function (scope, element, attr) {
+            $(element).on('post-body.bs.table', function () {
+                $(this).find(".button").each(function(){
+                    $(this).html("<center><a class='glyphicon glyphicon-edit' href='#'></a></center>");
+                });
+            });
+        }
+    };
+}]);
+
 //Diretiva para atualizar valor do select caso mude no scope
 app.directive('selectUpdate', function ($timeout, $rootScope) {
     return {
