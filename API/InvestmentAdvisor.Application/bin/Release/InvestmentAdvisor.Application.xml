@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InvestmentAdvisor.Application</name>
+    </assembly>
+    <members>
+        <member name="T:InvestmentAdvisor.Application.Services.HistoricInvestmentService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.HistoricInvestmentService.#ctor(InvestmentAdvisor.Data.Repository.HistoricInvestmentRepository)">
+            <summary>
+            
+            </summary>
+            <param name="historicInvestmentRepository"></param>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.HistoricInvestmentService.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.HistoricInvestmentService.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.HistoricInvestmentService.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.HistoricInvestmentService.Add(InvestmentAdvisor.Domain.Entities.HistoricInvestment)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.HistoricInvestmentService.GetByUser(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="idUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.HistoricInvestmentService.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InvestmentAdvisor.Application.Services.InvestmentService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.#ctor(InvestmentAdvisor.Data.Repository.InvestmentRepository)">
+            <summary>
+            
+            </summary>
+            <param name="investmentRepository"></param>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.GetByType(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="idTypeInvestment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.GetByRisk(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="idRiskAvailability"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.GetByName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.InvestmentService.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InvestmentAdvisor.Application.Services.UserService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.#ctor(InvestmentAdvisor.Data.Repository.UserRepository)">
+            <summary>
+            
+            </summary>
+            <param name="userRepository"></param>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.GetByEmail(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.Add(InvestmentAdvisor.Domain.Entities.User)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.Login(InvestmentAdvisor.Domain.Entities.User)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.UserService.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

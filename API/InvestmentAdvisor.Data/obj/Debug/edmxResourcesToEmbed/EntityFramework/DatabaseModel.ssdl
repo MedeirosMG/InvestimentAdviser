@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_HISTORIC_INVESTMENT">
+    <Key>
+      <PropertyRef Name="ID_HISTORIC_INVESTMENT" />
+    </Key>
+    <Property Name="ID_HISTORIC_INVESTMENT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USER" Type="int" Nullable="false" />
+    <Property Name="ID_INVESTMENT" Type="int" Nullable="false" />
+    <Property Name="VALUE_INVESTED" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="DATE" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_INVESTMENT">
+    <Key>
+      <PropertyRef Name="ID_INVESTMENT" />
+    </Key>
+    <Property Name="ID_INVESTMENT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_TYPE_INVESTMENT" Type="int" Nullable="false" />
+    <Property Name="LINK" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID_RISK_AVAILABILITY" Type="int" Nullable="false" />
+    <Property Name="PERCENT_RETURN" Type="float" Nullable="false" />
+    <Property Name="DETAILS" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_RISK_AVAILABILITY">
+    <Key>
+      <PropertyRef Name="ID_RISK_AVAILABILITY" />
+    </Key>
+    <Property Name="ID_RISK_AVAILABILITY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_TYPE_INVESTMENT">
+    <Key>
+      <PropertyRef Name="ID_TYPE_INVESTMENT" />
+    </Key>
+    <Property Name="ID_TYPE_INVESTMENT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_USER">
+    <Key>
+      <PropertyRef Name="ID_USER" />
+    </Key>
+    <Property Name="ID_USER" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CPF" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NUMBER_CHILDREN" Type="int" Nullable="false" />
+    <Property Name="VOLUM_AVAILABLE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ID_RISK_AVAILABILITY" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT">
+    <End Role="TB_INVESTMENT" Type="Self.TB_INVESTMENT" Multiplicity="1" />
+    <End Role="TB_HISTORIC_INVESTMENT" Type="Self.TB_HISTORIC_INVESTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_INVESTMENT">
+        <PropertyRef Name="ID_INVESTMENT" />
+      </Principal>
+      <Dependent Role="TB_HISTORIC_INVESTMENT">
+        <PropertyRef Name="ID_INVESTMENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_HISTORIC_INVESTMENT_TB_USER">
+    <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="1" />
+    <End Role="TB_HISTORIC_INVESTMENT" Type="Self.TB_HISTORIC_INVESTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USER">
+        <PropertyRef Name="ID_USER" />
+      </Principal>
+      <Dependent Role="TB_HISTORIC_INVESTMENT">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_INVESTMENT_TB_RISK_AVAILABILITY">
+    <End Role="TB_RISK_AVAILABILITY" Type="Self.TB_RISK_AVAILABILITY" Multiplicity="1" />
+    <End Role="TB_INVESTMENT" Type="Self.TB_INVESTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RISK_AVAILABILITY">
+        <PropertyRef Name="ID_RISK_AVAILABILITY" />
+      </Principal>
+      <Dependent Role="TB_INVESTMENT">
+        <PropertyRef Name="ID_RISK_AVAILABILITY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_INVESTMENT_TB_TYPE_INVESTMENT">
+    <End Role="TB_TYPE_INVESTMENT" Type="Self.TB_TYPE_INVESTMENT" Multiplicity="1" />
+    <End Role="TB_INVESTMENT" Type="Self.TB_INVESTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_TYPE_INVESTMENT">
+        <PropertyRef Name="ID_TYPE_INVESTMENT" />
+      </Principal>
+      <Dependent Role="TB_INVESTMENT">
+        <PropertyRef Name="ID_TYPE_INVESTMENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_USER_TB_RISK_AVAILABILITY">
+    <End Role="TB_RISK_AVAILABILITY" Type="Self.TB_RISK_AVAILABILITY" Multiplicity="1" />
+    <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RISK_AVAILABILITY">
+        <PropertyRef Name="ID_RISK_AVAILABILITY" />
+      </Principal>
+      <Dependent Role="TB_USER">
+        <PropertyRef Name="ID_RISK_AVAILABILITY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="TB_HISTORIC_INVESTMENT" EntityType="Self.TB_HISTORIC_INVESTMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_INVESTMENT" EntityType="Self.TB_INVESTMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_RISK_AVAILABILITY" EntityType="Self.TB_RISK_AVAILABILITY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_TYPE_INVESTMENT" EntityType="Self.TB_TYPE_INVESTMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_USER" EntityType="Self.TB_USER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT" Association="Self.FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT">
+      <End Role="TB_INVESTMENT" EntitySet="TB_INVESTMENT" />
+      <End Role="TB_HISTORIC_INVESTMENT" EntitySet="TB_HISTORIC_INVESTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_HISTORIC_INVESTMENT_TB_USER" Association="Self.FK_TB_HISTORIC_INVESTMENT_TB_USER">
+      <End Role="TB_USER" EntitySet="TB_USER" />
+      <End Role="TB_HISTORIC_INVESTMENT" EntitySet="TB_HISTORIC_INVESTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_INVESTMENT_TB_RISK_AVAILABILITY" Association="Self.FK_TB_INVESTMENT_TB_RISK_AVAILABILITY">
+      <End Role="TB_RISK_AVAILABILITY" EntitySet="TB_RISK_AVAILABILITY" />
+      <End Role="TB_INVESTMENT" EntitySet="TB_INVESTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_INVESTMENT_TB_TYPE_INVESTMENT" Association="Self.FK_TB_INVESTMENT_TB_TYPE_INVESTMENT">
+      <End Role="TB_TYPE_INVESTMENT" EntitySet="TB_TYPE_INVESTMENT" />
+      <End Role="TB_INVESTMENT" EntitySet="TB_INVESTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_USER_TB_RISK_AVAILABILITY" Association="Self.FK_TB_USER_TB_RISK_AVAILABILITY">
+      <End Role="TB_RISK_AVAILABILITY" EntitySet="TB_RISK_AVAILABILITY" />
+      <End Role="TB_USER" EntitySet="TB_USER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,13 @@
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\Database\Database.mdf
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\Database\Database_log.ldf
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\InvestmentAdvisor.Data.dll.config
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\InvestmentAdvisor.Data.dll
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\InvestmentAdvisor.Data.pdb
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\EntityFramework.dll
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\EntityFramework.SqlServer.dll
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\EntityFramework.xml
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\bin\Release\EntityFramework.SqlServer.xml
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\obj\Release\InvestmentAdvisor.Data.csprojResolveAssemblyReference.cache
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\obj\Release\InvestmentAdvisor.Data.csproj.CoreCompileInputs.cache
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\obj\Release\InvestmentAdvisor.Data.dll
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.Data\obj\Release\InvestmentAdvisor.Data.pdb

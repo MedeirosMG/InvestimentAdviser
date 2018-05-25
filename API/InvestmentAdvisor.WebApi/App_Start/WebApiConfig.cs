@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace InvestmentAdvisor.WebApi
 {
@@ -18,7 +19,7 @@ namespace InvestmentAdvisor.WebApi
         /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
-            //EnableCrossSiteRequests(config);
+            EnableCrossSiteRequests(config);
 
             //Web API configuration and services
             //para remover o XML
@@ -52,6 +53,15 @@ namespace InvestmentAdvisor.WebApi
 
             //habilita a validação null objects
             // config.Filters.Add(new CheckModelForNullAttribute());
+        }
+
+        private static void EnableCrossSiteRequests(HttpConfiguration config)
+        {
+            var cors = new EnableCorsAttribute(
+                origins: "*",
+                headers: "*",
+                methods: "*");
+            config.EnableCors(cors);
         }
     }
 }

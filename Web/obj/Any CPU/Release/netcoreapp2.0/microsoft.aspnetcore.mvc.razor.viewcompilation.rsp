@@ -1,0 +1,10 @@
+D:\Medei\Desktop\Peruana\InvestimentAdviser\Web
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=Implementação INVAD core
+--content-root=D:\Medei\Desktop\Peruana\InvestimentAdviser\Web
+--file=D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\Views\ConsultaPerfil\Index.cshtml
+--file=D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\Views\Home\Index.cshtml
+--file=D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\Views\InvestimentosRealizados\Index.cshtml
+--file=D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\Views\Login\Index.cshtml
+--file=D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\Views\Shared\_Layout.cshtml
+--file=D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\Views\_ViewStart.cshtml

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InvestmentAdvisor.Service</name>
+    </assembly>
+    <members>
+        <member name="T:InvestmentAdvisor.Service.UserService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Service.UserService.#ctor(InvestmentAdvisor.Repository.EntityFramework.DatabaseEntities)">
+            <summary>
+            
+            </summary>
+            <param name="ctx"></param>
+        </member>
+        <member name="M:InvestmentAdvisor.Service.UserService.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Service.UserService.GetAllUsers">
+            <summary>
+            Get All Users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Service.UserService.SaveChanges">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Service.UserService.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

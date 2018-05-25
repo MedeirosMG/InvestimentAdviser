@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InvestmentAdvisor.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:InvestmentAdvisor.WebApi.BundleConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            
+            </summary>
+            <param name="bundles"></param>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.FilterConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            
+            </summary>
+            <param name="filters"></param>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.RouteConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            
+            </summary>
+            <param name="routes"></param>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.SwaggerConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.SwaggerConfig.Register">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.WebApiConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.Controllers.InvestmentController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.InvestmentController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.InvestmentController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.InvestmentController.GetByName(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.InvestmentController.GetByRisk(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.InvestmentController.GetByType(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.InvestmentController.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.Controllers.HistoricInvestmentController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.HistoricInvestmentController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.HistoricInvestmentController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.HistoricInvestmentController.GetByUser(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.HistoricInvestmentController.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.HistoricInvestmentController.Add(InvestmentAdvisor.Domain.Entities.HistoricInvestment)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.UserController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.UserController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.UserController.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.UserController.GetByEmail(System.String)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.UserController.Login(InvestmentAdvisor.Domain.Entities.User)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.UserController.Add(InvestmentAdvisor.Domain.Entities.User)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.WebApiApplication">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.WebApiApplication.Application_Start">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

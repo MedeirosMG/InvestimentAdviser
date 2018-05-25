@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="HistoricInvestment">
+    <Key>
+      <PropertyRef Name="IdHistoricInvestment" />
+    </Key>
+    <Property Name="IdHistoricInvestment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="IdInvestment" Type="Int32" Nullable="false" />
+    <Property Name="ValueInvested" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Investment" Relationship="Self.FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT" FromRole="TB_HISTORIC_INVESTMENT" ToRole="TB_INVESTMENT" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TB_HISTORIC_INVESTMENT_TB_USER" FromRole="TB_HISTORIC_INVESTMENT" ToRole="TB_USER" />
+  </EntityType>
+  <EntityType Name="Investment">
+    <Key>
+      <PropertyRef Name="IdInvestment" />
+    </Key>
+    <Property Name="IdInvestment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdTypeInvestment" Type="Int32" Nullable="false" />
+    <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdRiskAvailability" Type="Int32" Nullable="false" />
+    <Property Name="PercentReturn" Type="Double" Nullable="false" />
+    <Property Name="Details" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="HistoricInvestment" Relationship="Self.FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT" FromRole="TB_INVESTMENT" ToRole="TB_HISTORIC_INVESTMENT" />
+    <NavigationProperty Name="RiskAvailability" Relationship="Self.FK_TB_INVESTMENT_TB_RISK_AVAILABILITY" FromRole="TB_INVESTMENT" ToRole="TB_RISK_AVAILABILITY" />
+    <NavigationProperty Name="TypeInvestment" Relationship="Self.FK_TB_INVESTMENT_TB_TYPE_INVESTMENT" FromRole="TB_INVESTMENT" ToRole="TB_TYPE_INVESTMENT" />
+  </EntityType>
+  <EntityType Name="RiskAvailability">
+    <Key>
+      <PropertyRef Name="IdRiskAvailability" />
+    </Key>
+    <Property Name="IdRiskAvailability" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Investment" Relationship="Self.FK_TB_INVESTMENT_TB_RISK_AVAILABILITY" FromRole="TB_RISK_AVAILABILITY" ToRole="TB_INVESTMENT" />
+    <NavigationProperty Name="User" Relationship="Self.FK_TB_USER_TB_RISK_AVAILABILITY" FromRole="TB_RISK_AVAILABILITY" ToRole="TB_USER" />
+  </EntityType>
+  <EntityType Name="TypeInvestment">
+    <Key>
+      <PropertyRef Name="IdTypeInvestment" />
+    </Key>
+    <Property Name="IdTypeInvestment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Investment" Relationship="Self.FK_TB_INVESTMENT_TB_TYPE_INVESTMENT" FromRole="TB_TYPE_INVESTMENT" ToRole="TB_INVESTMENT" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cpf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NumberChildren" Type="Int32" Nullable="false" />
+    <Property Name="VolumAvailable" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdRiskAvailability" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HistoricInvestment" Relationship="Self.FK_TB_HISTORIC_INVESTMENT_TB_USER" FromRole="TB_USER" ToRole="TB_HISTORIC_INVESTMENT" />
+    <NavigationProperty Name="RiskAvailability" Relationship="Self.FK_TB_USER_TB_RISK_AVAILABILITY" FromRole="TB_USER" ToRole="TB_RISK_AVAILABILITY" />
+  </EntityType>
+  <Association Name="FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT">
+    <End Role="TB_INVESTMENT" Type="DatabaseModel.Investment" Multiplicity="1" />
+    <End Role="TB_HISTORIC_INVESTMENT" Type="DatabaseModel.HistoricInvestment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_INVESTMENT">
+        <PropertyRef Name="IdInvestment" />
+      </Principal>
+      <Dependent Role="TB_HISTORIC_INVESTMENT">
+        <PropertyRef Name="IdInvestment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_HISTORIC_INVESTMENT_TB_USER">
+    <End Role="TB_USER" Type="DatabaseModel.User" Multiplicity="1" />
+    <End Role="TB_HISTORIC_INVESTMENT" Type="DatabaseModel.HistoricInvestment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USER">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="TB_HISTORIC_INVESTMENT">
+        <PropertyRef Name="IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_INVESTMENT_TB_RISK_AVAILABILITY">
+    <End Role="TB_RISK_AVAILABILITY" Type="DatabaseModel.RiskAvailability" Multiplicity="1" />
+    <End Role="TB_INVESTMENT" Type="DatabaseModel.Investment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RISK_AVAILABILITY">
+        <PropertyRef Name="IdRiskAvailability" />
+      </Principal>
+      <Dependent Role="TB_INVESTMENT">
+        <PropertyRef Name="IdRiskAvailability" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_INVESTMENT_TB_TYPE_INVESTMENT">
+    <End Role="TB_TYPE_INVESTMENT" Type="DatabaseModel.TypeInvestment" Multiplicity="1" />
+    <End Role="TB_INVESTMENT" Type="DatabaseModel.Investment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_TYPE_INVESTMENT">
+        <PropertyRef Name="IdTypeInvestment" />
+      </Principal>
+      <Dependent Role="TB_INVESTMENT">
+        <PropertyRef Name="IdTypeInvestment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_USER_TB_RISK_AVAILABILITY">
+    <End Role="TB_RISK_AVAILABILITY" Type="DatabaseModel.RiskAvailability" Multiplicity="1" />
+    <End Role="TB_USER" Type="DatabaseModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_RISK_AVAILABILITY">
+        <PropertyRef Name="IdRiskAvailability" />
+      </Principal>
+      <Dependent Role="TB_USER">
+        <PropertyRef Name="IdRiskAvailability" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HistoricInvestmentSet" EntityType="DatabaseModel.HistoricInvestment" />
+    <EntitySet Name="InvestmentSet" EntityType="DatabaseModel.Investment" />
+    <EntitySet Name="RiskAvailabilitySet" EntityType="DatabaseModel.RiskAvailability" />
+    <EntitySet Name="TypeInvestmentSet" EntityType="DatabaseModel.TypeInvestment" />
+    <EntitySet Name="UserSet" EntityType="DatabaseModel.User" />
+    <AssociationSet Name="FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT" Association="Self.FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT">
+      <End Role="TB_INVESTMENT" EntitySet="InvestmentSet" />
+      <End Role="TB_HISTORIC_INVESTMENT" EntitySet="HistoricInvestmentSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_HISTORIC_INVESTMENT_TB_USER" Association="Self.FK_TB_HISTORIC_INVESTMENT_TB_USER">
+      <End Role="TB_USER" EntitySet="UserSet" />
+      <End Role="TB_HISTORIC_INVESTMENT" EntitySet="HistoricInvestmentSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_INVESTMENT_TB_RISK_AVAILABILITY" Association="Self.FK_TB_INVESTMENT_TB_RISK_AVAILABILITY">
+      <End Role="TB_RISK_AVAILABILITY" EntitySet="RiskAvailabilitySet" />
+      <End Role="TB_INVESTMENT" EntitySet="InvestmentSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_INVESTMENT_TB_TYPE_INVESTMENT" Association="Self.FK_TB_INVESTMENT_TB_TYPE_INVESTMENT">
+      <End Role="TB_TYPE_INVESTMENT" EntitySet="TypeInvestmentSet" />
+      <End Role="TB_INVESTMENT" EntitySet="InvestmentSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_USER_TB_RISK_AVAILABILITY" Association="Self.FK_TB_USER_TB_RISK_AVAILABILITY">
+      <End Role="TB_RISK_AVAILABILITY" EntitySet="RiskAvailabilitySet" />
+      <End Role="TB_USER" EntitySet="UserSet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

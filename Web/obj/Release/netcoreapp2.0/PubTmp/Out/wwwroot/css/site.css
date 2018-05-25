@@ -1,0 +1,6 @@
+footer {
+    position: fixed !important;
+    left: 30px;
+    bottom: 10px;
+    width: 95%;
+}

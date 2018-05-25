@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="InvestmentAdivisorEntities">
+    <EntitySetMapping Name="RiskAvailabilitySet">
+      <EntityTypeMapping TypeName="DatabaseModel.RiskAvailability">
+        <MappingFragment StoreEntitySet="TB_RISK_AVAILABILITY">
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="IdRiskAvailability" ColumnName="ID_RISK_AVAILABILITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="DatabaseModel.User">
+        <MappingFragment StoreEntitySet="TB_USER">
+          <ScalarProperty Name="IdRiskAvailability" ColumnName="ID_RISK_AVAILABILITY" />
+          <ScalarProperty Name="VolumAvailable" ColumnName="VOLUM_AVAILABLE" />
+          <ScalarProperty Name="NumberChildren" ColumnName="NUMBER_CHILDREN" />
+          <ScalarProperty Name="Cpf" ColumnName="CPF" />
+          <ScalarProperty Name="Email" ColumnName="EMAIL" />
+          <ScalarProperty Name="Password" ColumnName="PASSWORD" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="IdUser" ColumnName="ID_USER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoricInvestmentSet">
+      <EntityTypeMapping TypeName="DatabaseModel.HistoricInvestment">
+        <MappingFragment StoreEntitySet="TB_HISTORIC_INVESTMENT">
+          <ScalarProperty Name="Date" ColumnName="DATE" />
+          <ScalarProperty Name="ValueInvested" ColumnName="VALUE_INVESTED" />
+          <ScalarProperty Name="IdInvestment" ColumnName="ID_INVESTMENT" />
+          <ScalarProperty Name="IdUser" ColumnName="ID_USER" />
+          <ScalarProperty Name="IdHistoricInvestment" ColumnName="ID_HISTORIC_INVESTMENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvestmentSet">
+      <EntityTypeMapping TypeName="DatabaseModel.Investment">
+        <MappingFragment StoreEntitySet="TB_INVESTMENT">
+          <ScalarProperty Name="IdTypeInvestment" ColumnName="ID_TYPE_INVESTMENT" />
+          <ScalarProperty Name="Details" ColumnName="DETAILS" />
+          <ScalarProperty Name="PercentReturn" ColumnName="PERCENT_RETURN" />
+          <ScalarProperty Name="IdRiskAvailability" ColumnName="ID_RISK_AVAILABILITY" />
+          <ScalarProperty Name="Link" ColumnName="LINK" />
+          <ScalarProperty Name="Name" ColumnName="NAME" />
+          <ScalarProperty Name="IdInvestment" ColumnName="ID_INVESTMENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeInvestmentSet">
+      <EntityTypeMapping TypeName="DatabaseModel.TypeInvestment">
+        <MappingFragment StoreEntitySet="TB_TYPE_INVESTMENT">
+          <ScalarProperty Name="Description" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="IdTypeInvestment" ColumnName="ID_TYPE_INVESTMENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
