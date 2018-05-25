@@ -8,10 +8,10 @@ app.controller('controllerLogin', ['$scope', 'ListService', '$rootScope', 'httpR
 
         $.ajax({
             url: httpRequest.returnConexao() + '/User/GetByEmail',
+            data: {
+                Email: $scope.temp.loginEmail
+            },
             type: "GET",
-            data: JSON.stringify({
-                Email: $scope.loginEmail
-            }),
             dataType: "json",
             success: function (data) {
                 console.log(data);

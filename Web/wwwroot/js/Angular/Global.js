@@ -43,7 +43,7 @@ var Services = angular.module('Services', [])
 Services.service('httpRequest', function () {
 
     this.returnConexao = function () {
-        return "localhost:49359/api";
+        return "http://localhost:49359/api";
     };
 
 });
