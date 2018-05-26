@@ -3,10 +3,9 @@ app.controller('controllerLogin', ['$scope', 'ListService', '$rootScope', 'httpR
     $scope.user = {};
 
     $scope.autenticar = function () {
-
         if ($scope.loginEmail == undefined || typeof $scope.loginPassword == "undefined" || $scope.loginEmail == "" || $scope.loginPassword == "")
             return;
-
+        
         $.ajax({
             url: httpRequest.returnConexao() + '/User/Login',
             type: "POST",

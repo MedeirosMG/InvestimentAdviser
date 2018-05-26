@@ -175,6 +175,56 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
         customAlert.alertWarning("Atenção! Faça login no sistema para acessar essa funcionalidade.");
     };
 
+    $scope.alterarCadastro = function () {
+        console.log($scope.user);
+
+        $('#alterarCadastro').modal();
+        $("#nome_").val($scope.user.Name);
+        $("#nome_").trigger("change");
+
+        $("#email_").val($scope.user.Email);
+        $("#email_").trigger("change");
+
+        $("#cpf_").val($scope.user.Cpf);
+        $("#cpf_").trigger("change");
+
+        $("#nc_").val($scope.user.NumberChildren);
+        $("#nc_").trigger("change");
+
+        $("#volume_").val($scope.user.VolumAvailable);
+        $("#volume_").trigger("change");
+
+        $("#Password").val($scope.user.Password);
+        $("#Password").trigger("change");
+
+        $("#IdUser").val($scope.user.IdUser);
+        $("#IdUser").trigger("change");
+
+        $("#IdRiskAvailability").val($scope.user.IdRiskAvailability);
+        $("#IdRiskAvailability").trigger("change");
+        
+    };
+
+    $scope.salvarAlterarCadastro = function () {
+        $.ajax({
+            url: httpRequest.returnConexao() + '/User/Update',
+            type: "POST",
+            data: JSON.stringify($scope.user),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                customAlert.alertSuccess("Sucesso!", "Cadastro alterado com sucesso!");
+                $scope.$apply();
+                $('#alterarCadastro').modal('hide');
+                location.href = "/Home";
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
     $scope.validaLogin = function () {   
         if (httpRequest.GetCookie("username") == "logoff") {
             $scope.user = null;

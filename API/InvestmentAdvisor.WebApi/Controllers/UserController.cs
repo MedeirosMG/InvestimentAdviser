@@ -78,10 +78,5 @@ namespace InvestmentAdvisor.WebApi.Controllers
         {
             return _userService.Update(user);
         }
-
-        public void executa()
-        {
-            _userService.teste();
-        }
     }
 }

@@ -191,12 +191,6 @@ namespace InvestmentAdvisor.Application.Services
             return result;
         }
 
-        public void teste()
-        {
-            var temp = new Generate();
-            temp.Start();
-        }
-
         /// <summary>
         /// 
         /// </summary>
