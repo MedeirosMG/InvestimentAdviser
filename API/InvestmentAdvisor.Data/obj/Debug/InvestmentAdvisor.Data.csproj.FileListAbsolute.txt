@@ -65,3 +65,16 @@ D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Data\obj\Debug\Inves
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Data\obj\Debug\InvestmentAdvisor.Data.csproj.CopyComplete
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Data\obj\Debug\InvestmentAdvisor.Data.dll
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Data\obj\Debug\InvestmentAdvisor.Data.pdb
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\Database\Database.mdf
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\Database\Database_log.ldf
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\InvestmentAdvisor.Data.dll.config
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\InvestmentAdvisor.Data.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\InvestmentAdvisor.Data.pdb
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\EntityFramework.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\EntityFramework.xml
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\obj\Debug\InvestmentAdvisor.Data.csprojResolveAssemblyReference.cache
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\obj\Debug\InvestmentAdvisor.Data.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\obj\Debug\InvestmentAdvisor.Data.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Data\obj\Debug\InvestmentAdvisor.Data.pdb

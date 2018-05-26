@@ -20,7 +20,7 @@
     <Property Name="LINK" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="ID_RISK_AVAILABILITY" Type="int" Nullable="false" />
     <Property Name="PERCENT_RETURN" Type="float" Nullable="false" />
-    <Property Name="DETAILS" Type="datetime" Nullable="false" />
+    <Property Name="DETAILS" Type="text" Nullable="false" />
   </EntityType>
   <EntityType Name="TB_RISK_AVAILABILITY">
     <Key>
@@ -40,7 +40,7 @@
     <Key>
       <PropertyRef Name="ID_USER" />
     </Key>
-    <Property Name="ID_USER" Type="int" Nullable="false" />
+    <Property Name="ID_USER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="PASSWORD" Type="varchar" MaxLength="64" Nullable="false" />
     <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />

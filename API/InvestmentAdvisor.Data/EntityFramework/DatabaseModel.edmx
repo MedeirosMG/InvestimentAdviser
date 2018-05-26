@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TB_HISTORIC_INVESTMENT">
           <Key>
             <PropertyRef Name="ID_HISTORIC_INVESTMENT" />
@@ -25,7 +25,7 @@
           <Property Name="LINK" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ID_RISK_AVAILABILITY" Type="int" Nullable="false" />
           <Property Name="PERCENT_RETURN" Type="float" Nullable="false" />
-          <Property Name="DETAILS" Type="datetime" Nullable="false" />
+          <Property Name="DETAILS" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_RISK_AVAILABILITY">
           <Key>
@@ -45,7 +45,7 @@
           <Key>
             <PropertyRef Name="ID_USER" />
           </Key>
-          <Property Name="ID_USER" Type="int" Nullable="false" />
+          <Property Name="ID_USER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAME" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="PASSWORD" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
@@ -141,8 +141,7 @@
             <End Role="TB_USER" EntitySet="TB_USER" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -168,7 +167,7 @@
           <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IdRiskAvailability" Type="Int32" Nullable="false" />
           <Property Name="PercentReturn" Type="Double" Nullable="false" />
-          <Property Name="Details" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Details" Type="String" Nullable="false" />
           <NavigationProperty Name="HistoricInvestment" Relationship="Self.FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT" FromRole="TB_INVESTMENT" ToRole="TB_HISTORIC_INVESTMENT" />
           <NavigationProperty Name="RiskAvailability" Relationship="Self.FK_TB_INVESTMENT_TB_RISK_AVAILABILITY" FromRole="TB_INVESTMENT" ToRole="TB_RISK_AVAILABILITY" />
           <NavigationProperty Name="TypeInvestment" Relationship="Self.FK_TB_INVESTMENT_TB_TYPE_INVESTMENT" FromRole="TB_INVESTMENT" ToRole="TB_TYPE_INVESTMENT" />
@@ -194,7 +193,7 @@
           <Key>
             <PropertyRef Name="IdUser" />
           </Key>
-          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />

@@ -97,13 +97,29 @@ app.directive('selectWatcher', ['$timeout', '$rootScope', function ($timeout, $r
 }]);
 
 //Diretiva para adiconar botão na bootstrap table
-app.directive('buttonTable', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
+app.directive('tableHtml', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
     return {
         link: function (scope, element, attr) {
             $(element).on('post-body.bs.table', function () {
-                $(this).find(".button").each(function(){
-                    $(this).html("<center><a class='glyphicon glyphicon-edit' href='#'></a></center>");
+                $(this).find("td").each(function () {
+                    if ($(this).html().indexOf("http") != -1) {
+                        $(this).html("<a href='" + $(this).text() + "'>Link Sugerido</a>");
+                    } else if (Number.isInteger(parseInt($(this).text()))) {
+                        $(this).html("<center><a href='#'" +
+                            " onclick=\"adicionaInvestimento(\'" + $(this).text() + "')\"><span class='glyphicon glyphicon-share'></span></a ></center > ");
+                    }
                 });
+            });
+
+            $(element).find("td").each(function () {
+                if ($(this).html().indexOf("http") != -1) {
+                    $(this).html("<a href='" + $(this).text() + "'>Link Sugerido</a>");
+                } else if ($(this).html().indexOf("-") != -1) {
+                    var investimento = $(this).parent("tr").find("td").first().text();
+
+                    $(this).html("<center><a href='#'" +
+                        " onclick='adicionaInvestimento(" + investimento + ")'><span class='glyphicon glyphicon-share'></span></a ></center > ");
+                }
             });
         }
     };
@@ -146,9 +162,13 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
 
     };
 
+    $rootScope.$on("callBackUser", function (event, func) {
+        func($scope.user);
+    });
+
     $scope.logout = function () {
         document.cookie = "username=logoff";
-        $scope.validaLogin();
+        location.href = "/Home";
     };
 
     $scope.erroNLogado = function () {
@@ -179,4 +199,168 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
         });
     };
 
+}]);
+
+function adicionaInvestimento(data) {
+    $("#modalInvestimento").modal();
+
+    $("#investimento_").val(data);
+    $("#investimento_").trigger("change");
+};
+
+app.controller('controllerSugeridos', ['$scope', 'ListService', '$rootScope', 'httpRequest', function ($scope, ListService, $rootScope, httpRequest) {
+    var customAlert = new CustomAlert();
+
+    $scope.showMine = true;
+
+    $scope.getUserRisk = function () {
+        $.ajax({
+            url: httpRequest.returnConexao() + '/User/GetByEmail',
+            type: "GET",
+            data: {
+                email: httpRequest.GetCookie("username")
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.getSuggestInvestments(data.Content.IdRiskAvailability);
+                $scope.$apply();
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
+    $scope.inserirInvestimento = function () {
+        if ($scope.ValorInvestido == undefined || $scope.dataInvestido == undefined)
+            return;
+
+        
+        $rootScope.$emit("callBackUser", function (user) {
+            var objeto = {
+                IdInvestment: $scope.id_Investimento,
+                ValueInvested: $scope.ValorInvestido,
+                Date: $scope.dataInvestido,
+                IdUser: user.IdUser
+            }
+
+            $.ajax({
+                url: httpRequest.returnConexao() + '/HistoricInvestment/Add',
+                type: "POST",
+                data: JSON.stringify(objeto),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.Success) {
+                        customAlert.alertSuccess_("Sucesso", "Investimento registrado com sucesso.", function () {
+                            $("#modalInvestimento").modal("hide");
+                        });
+                    } else {
+                        customAlert.alertError("Erro", data.Messages[0].Content);
+                    }
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+    };
+
+    $scope.getSuggestInvestments = function (typeRisk) {
+        $scope.showMine = true;
+        $.ajax({
+            url: httpRequest.returnConexao() + '/Investment/GetByRisk',
+            type: "GET",
+            data: {
+                idRiskAvailability: typeRisk
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.dadosTabela = data.Content;
+                $scope.$apply();
+                $('#table_investimentos_sugeridos').bootstrapTable('load', data.Content);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
+    $scope.getAllInvestments = function () {
+        $scope.showMine = false;
+        $.ajax({
+            url: httpRequest.returnConexao() + '/Investment/Get',
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.dadosTabela = data.Content;
+                $scope.$apply();
+                $('#table_investimentos_sugeridos').bootstrapTable('load', data.Content);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+}]);
+
+app.controller('controllerFeitos', ['$scope', 'ListService', '$rootScope', 'httpRequest', function ($scope, ListService, $rootScope, httpRequest) {
+    var customAlert = new CustomAlert();
+
+    $scope.getUserInvestments = function () {
+        $.ajax({
+            url: httpRequest.returnConexao() + '/User/GetByEmail',
+            data: {
+                email: httpRequest.GetCookie("username")
+            },
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.getDoneInvestments(data.Content.IdUser);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
+    $scope.getDoneInvestments = function (idUser_) {
+        $.ajax({
+            url: httpRequest.returnConexao() + '/HistoricInvestment/GetByUser',
+            type: "GET",
+            data: {
+                idUser: idUser_
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.dadosTabela = data.Content;
+                $scope.$apply();
+
+                var Investment = [];
+
+                $.each(data.Content, function (index, data) {
+                    var obj = {
+                        Name: data.Investment.Name,
+                        PercentReturn: data.Investment.PercentReturn.toPrecision(2) + "%",
+                        estimativaRetorno: (data.Investment.PercentReturn * data.ValueInvested).toPrecision(10),
+                        valorInvestido: "R$ " + data.ValueInvested,
+                        dataInvestido: data.Date,
+                        Details: data.Investment.Details
+                    };
+                    
+                    Investment.push(obj);
+                });
+
+                $('#table_investimentos_feitos').bootstrapTable('load', Investment);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
 }]);

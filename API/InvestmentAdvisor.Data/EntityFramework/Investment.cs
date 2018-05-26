@@ -26,7 +26,7 @@ namespace InvestmentAdvisor.Data.EntityFramework
         public string Link { get; set; }
         public int IdRiskAvailability { get; set; }
         public double PercentReturn { get; set; }
-        public System.DateTime Details { get; set; }
+        public string Details { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistoricInvestment> HistoricInvestment { get; set; }

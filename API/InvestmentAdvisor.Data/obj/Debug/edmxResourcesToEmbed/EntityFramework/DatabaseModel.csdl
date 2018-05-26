@@ -22,7 +22,7 @@
     <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IdRiskAvailability" Type="Int32" Nullable="false" />
     <Property Name="PercentReturn" Type="Double" Nullable="false" />
-    <Property Name="Details" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Details" Type="String" Nullable="false" />
     <NavigationProperty Name="HistoricInvestment" Relationship="Self.FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT" FromRole="TB_INVESTMENT" ToRole="TB_HISTORIC_INVESTMENT" />
     <NavigationProperty Name="RiskAvailability" Relationship="Self.FK_TB_INVESTMENT_TB_RISK_AVAILABILITY" FromRole="TB_INVESTMENT" ToRole="TB_RISK_AVAILABILITY" />
     <NavigationProperty Name="TypeInvestment" Relationship="Self.FK_TB_INVESTMENT_TB_TYPE_INVESTMENT" FromRole="TB_INVESTMENT" ToRole="TB_TYPE_INVESTMENT" />
@@ -48,7 +48,7 @@
     <Key>
       <PropertyRef Name="IdUser" />
     </Key>
-    <Property Name="IdUser" Type="Int32" Nullable="false" />
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />

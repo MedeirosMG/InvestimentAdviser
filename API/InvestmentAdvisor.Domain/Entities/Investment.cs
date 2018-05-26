@@ -18,7 +18,7 @@ namespace InvestmentAdvisor.Domain.Entities
 
         public double PercentReturn { get; set; }
 
-        public System.DateTime Details { get; set; }
+        public string Details { get; set; }
 
         public int IdTypeInvestment { get; set; }
 

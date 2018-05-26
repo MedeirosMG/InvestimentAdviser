@@ -216,6 +216,12 @@
             </summary>
             <returns></returns>        
         </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.UserController.Update(InvestmentAdvisor.Domain.Entities.User)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:InvestmentAdvisor.WebApi.WebApiApplication">
             <summary>
             

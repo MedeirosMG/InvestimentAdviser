@@ -163,6 +163,40 @@ namespace InvestmentAdvisor.Application.Services
             return result;
         }
 
+        // Service
+        public Result<Domain.Entities.User> Update(Domain.Entities.User user)
+        {
+            Result<Domain.Entities.User> result = new Result<Domain.Entities.User>();
+
+            try
+            {
+                result.Content = Converters.ConvertUserToModel(
+                                    _userRepository.Update(Converters.ConvertUserToData(user))
+                                 );
+
+
+                if (result.Content != null)
+                {
+                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário já cadastrado.", null);
+                    _userRepository.SaveChanges();
+                }
+                else
+                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário não encontrado.", result.Content);
+            }
+            catch (Exception ex)
+            {
+                result = Result<Domain.Entities.User>.ReturnMessageCollect(ex.Message, null);
+            }
+
+            return result;
+        }
+
+        public void teste()
+        {
+            var temp = new Generate();
+            temp.Start();
+        }
+
         /// <summary>
         /// 
         /// </summary>
