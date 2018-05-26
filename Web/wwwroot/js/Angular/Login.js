@@ -19,6 +19,8 @@ app.controller('controllerLogin', ['$scope', 'ListService', '$rootScope', 'httpR
             success: function (data) {
                 console.log(data);
                 if (data.Success) {
+                    document.cookie = "username=" + data.Content.Email;
+                    location.href = '/Home'
                     customAlert.alertSuccess("Sucesso!", data.message);
                 }
                 else {

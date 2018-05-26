@@ -64,7 +64,8 @@ namespace InvestmentAdvisor.WebApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>        
+        [HttpPost]
         public Result<User> Add(User user)
         {
             return _userService.Add(user);

@@ -814,8 +814,8 @@ D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.WebApi\obj\Debug\Inv
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.WebApi\bin\Microsoft.Owin.dll
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.WebApi\bin\Owin.dll
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.WebApi\bin\Microsoft.Owin.xml
-D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.WebApi\bin\Database\Database.mdf
-D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.WebApi\bin\Database\Database_log.ldf
 D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.WebApi\bin\Microsoft.Owin.dll
 D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.WebApi\bin\Owin.dll
 D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.WebApi\bin\Microsoft.Owin.xml
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.WebApi\bin\Database\Database.mdf
+D:\Medei\Downloads\Peruana\InvestimentAdviser\API\InvestmentAdvisor.WebApi\bin\Database\Database_log.ldf

@@ -116,15 +116,17 @@ namespace InvestmentAdvisor.Application.Services
 
             try
             {
+                if (GetByEmail(user.Email).Success)
+                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário já cadastrado.", null);
+
                 result.Content = Converters.ConvertUserToModel(
                                     _userRepository.Add(Converters.ConvertUserToData(user))
                                  );
 
+
                 _userRepository.SaveChanges();
-                if(GetByEmail(user.Email) != null)
-                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário já cadastrado.", null);
-                else
-                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Sucess", result.Content);
+                
+                result = Result<Domain.Entities.User>.ReturnMessageCollect("Sucess", result.Content);
             }
             catch (Exception ex)
             {

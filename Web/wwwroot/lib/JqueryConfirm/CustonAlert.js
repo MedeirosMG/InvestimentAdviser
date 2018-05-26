@@ -53,6 +53,30 @@ var CustomAlert = function () {
         });
     }
 
+    this.alertSuccess_ = function (_title, _msg, func_) {
+        $.alert({
+            alignMiddle: false,
+            offsetTop: 120,
+            title: _title,
+            titleClass: 'msg-success',
+            content: _msg,
+            icon: 'fa fa-check',
+            closeIcon: true,
+            type: 'green',
+            backgroundDismiss: false,
+            backgroundDismissAnimation: 'glow-green',
+            buttons: {
+                Ok: {
+                    text: 'Ok',
+                    btnClass: 'btn-green',
+                    action: function () {
+                        func_()
+                    }
+                }
+            }
+        });
+    }
+
     this.alertError = function (_title, _msg) {
         $.alert({
             alignMiddle: false,

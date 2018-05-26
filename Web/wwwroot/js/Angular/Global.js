@@ -133,15 +133,13 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
     $scope.linkAtivo = -1;
     $scope.user = null;
 
-    document.cookie = "username=medeiros_mg@hotmail.com";
-
     //Verifica o link atual para atualizar o selecionado na view 
-    $scope.validaLink = function(){
-        if(window.location.href.indexOf("InvestimentosRealizados") != -1)
+    $scope.validaLink = function () {
+        if (window.location.href.indexOf("InvestimentosRealizados") != -1)
             $scope.linkAtivo = 3;
-        else if(window.location.href.indexOf("ConsultaPerfil") != -1)
+        else if (window.location.href.indexOf("ConsultaPerfil") != -1)
             $scope.linkAtivo = 2;
-        else if(window.location.href.indexOf("Login") != -1)
+        else if (window.location.href.indexOf("Login") != -1)
             $scope.linkAtivo = -1;
         else
             $scope.linkAtivo = 1;
@@ -151,10 +149,18 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
     $scope.logout = function () {
         document.cookie = "username=logoff";
         $scope.validaLogin();
-        console.log("ok");
     };
 
-    $scope.validaLogin = function(){
+    $scope.erroNLogado = function () {
+        customAlert.alertWarning("Atenção! Faça login no sistema para acessar essa funcionalidade.");
+    };
+
+    $scope.validaLogin = function () {   
+        if (httpRequest.GetCookie("username") == "logoff") {
+            $scope.user = null;
+            return;
+        }
+
         $.ajax({
             url: httpRequest.returnConexao() + '/User/GetByEmail',
             type: "GET",
@@ -166,7 +172,6 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
             success: function (data) {
                 $scope.user = data.Content;
                 $scope.$apply();
-                console.log($scope.user);
             },
             error: function (data) {
                 console.log(data);

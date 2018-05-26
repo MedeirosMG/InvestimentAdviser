@@ -61,12 +61,18 @@
                     <nav class="navbar navbar-default">
                         <div class="container-fluid">
                             <div class="navbar-header">
-                            <a class="navbar-brand" href="#">Navegação</a>
+                                <a class="navbar-brand" href="#">Navegação</a>
                             </div>
-                            <ul class="nav navbar-nav" ng-init="validaLink()">
-                                <li ng-class="{'active' : linkAtivo==1}">@Html.ActionLink("Home","Index","Home")</li>
-                                <li ng-class="{'active' : linkAtivo==2}">@Html.ActionLink("Consulta baseada no perfil","Index","ConsultaPerfil")</li>
-                                <li ng-class="{'active' : linkAtivo==3}">@Html.ActionLink("Consulta de investimentos feitos","Index","InvestimentosRealizados")</li>
+                            <ul class="nav navbar-nav" ng-init="validaLink()" ng-if="user!=null">
+                                <li ng-class="{'active' : linkAtivo==1}">@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li ng-class="{'active' : linkAtivo==2}">@Html.ActionLink("Consulta baseada no perfil", "Index", "ConsultaPerfil")</li>
+                                <li ng-class="{'active' : linkAtivo==3}">@Html.ActionLink("Consulta de investimentos feitos", "Index", "InvestimentosRealizados")</li>
+                            </ul>
+
+                            <ul class="nav navbar-nav" ng-init="validaLink()" ng-if="user==null"> 
+                                <li ng-class="{'active' : linkAtivo==1}">@Html.ActionLink("Home", "Index", "Home")</li>
+                                <li ng-class="{'active' : linkAtivo==2}" ng-click="erroNLogado()"><a href="#">Consulta Baseada no Perfil</a></li>
+                                <li ng-class="{'active' : linkAtivo==3}" ng-click="erroNLogado()"><a href="#">Consulta de Investimentos Feitos</a></li>
                             </ul>
                         </div>
                     </nav> 
@@ -74,7 +80,7 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid" style="padding-top:160px;margin-top:50px">
+    <div class="container-fluid" style="padding-top:160px;margin-top:170px">
         @RenderBody()
         <hr />
         <footer>
@@ -104,6 +110,7 @@
         <script src="~/lib/Angular/Angular.js"></script>
         <script src="~/js/Angular/Global.js"></script>
         <script src="~/js/Angular/Login.js"></script>
+        <script src="~/js/Angular/CadastrarUsuario.js"></script>
 
         <!-- Jquery confirm -->
         <script src="~/lib/JqueryConfirm/JqueryConfirm.js"></script>
