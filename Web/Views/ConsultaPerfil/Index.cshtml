@@ -1,104 +1,23 @@
-﻿<table id="table_investimentos_feitos" 
-					data-toggle="table"
-					data-search="true"
-					data-filter-control="true" 
-					data-show-export="true"
-					data-click-to-select="true"
-					data-toolbar="#toolbar"
-			class="table-responsive" button-table>
-			<thead>
-				<tr>
-					<th data-field="state" data-checkbox="true"></th>
-					<th data-field="prenom" data-filter-control="input" data-sortable="true">Nome Investimentos</th>
-					<th data-field="date" data-filter-control="select" data-sortable="true">Tipo do Investimento</th>
-					<th data-field="examen" data-filter-control="select" data-sortable="true">Risco do Investimentos</th>
-					<th data-field="note" data-sortable="true">Link sugerido</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-					<td>Jitender</td>
-					<td>01/09/2015</td>
-					<td>Français</td>
-					<td>12/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
-					<td>Jahid</td>
-					<td>05/09/2015</td>
-					<td>Philosophie</td>
-					<td>8/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
-					<td>Valentin</td>
-					<td>05/09/2015</td>
-					<td>Philosophie</td>
-					<td>4/20</td>	
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
-					<td>Milton</td>
-					<td>05/09/2015</td>
-					<td>Philosophie</td>
-					<td>10/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
-					<td>Gonesh</td>
-					<td>01/09/2015</td>
-					<td>Français</td>
-					<td>14/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="5" name="btSelectItem" type="checkbox"></td>
-					<td>Valérie</td>
-					<td>07/09/2015</td>
-					<td>Mathématiques</td>
-					<td>19/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="6" name="btSelectItem" type="checkbox"></td>
-					<td>Valentin</td>
-					<td>01/09/2015</td>
-					<td>Français</td>
-					<td>11/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="7" name="btSelectItem" type="checkbox"></td>
-					<td>Eric</td>
-					<td>01/10/2015</td>
-					<td>Philosophie</td>
-					<td>8/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="8" name="btSelectItem" type="checkbox"></td>
-					<td>Valentin</td>
-					<td>07/09/2015</td>
-					<td>Mathématiques</td>
-					<td>14/20</td>
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="9" name="btSelectItem" type="checkbox"></td>
-					<td>Valérie</td>
-					<td>01/10/2015</td>
-					<td>Philosophie</td>
-					<td>12/20</td>					
-				</tr>
-				<tr>
-					<td class="bs-checkbox "><input data-index="10" name="btSelectItem" type="checkbox"></td>
-					<td>Eric</td>
-					<td>07/09/2015</td>
-					<td>Mathématiques</td>
-					<td>14/20</td>					
-				</tr>
-				<tr>
-				<td class="bs-checkbox "><input data-index="11" name="btSelectItem" type="checkbox"></td>
-					<td>Valentin</td>
-					<td>01/10/2015</td>
-					<td>Philosophie</td>
-					<td>10/20</td>
-				</tr>
-			</tbody>
-		</table>
+﻿<div ng-controller="controllerSugeridos" ng-init="getUserRisk()">
+    <table id="table_investimentos_sugeridos"
+           data-toggle="table"
+           data-search="true"
+           data-filter-control="true"
+           data-show-export="true"
+           data-click-to-select="true"
+           data-toolbar="#toolbar"
+           class="table-responsive" button-table>
+        <thead>
+            <tr>
+                <th data-field="Name" data-filter-control="input" data-sortable="true">Nome Investimentos</th>
+                <th data-field="TypeInvestment.Description" data-filter-control="" data-sortable="true">Tipo do Investimento</th>
+                <th data-field="RiskAvailability.Description" data-filter-control="" data-sortable="true">Risco do Investimentos</th>
+                <th data-field="Link" data-filter-control="" data-sortable="true">Link sugerido</th>
+            </tr>
+        </thead>
+    </table>
+    <div style="margin-top:20px">
+        <button ng-show="showMine" ng-click="getAllInvestments()" type="button" class="btn btn-default">Mostrar todos investimentos</button>
+        <button ng-show="!showMine" ng-click="getUserRisk()" type="button" class="btn btn-default">Mostrar investimentos sugeridos para mim</button>
+    </div>
+</div>

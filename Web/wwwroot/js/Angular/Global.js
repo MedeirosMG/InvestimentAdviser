@@ -96,6 +96,21 @@ app.directive('selectWatcher', ['$timeout', '$rootScope', function ($timeout, $r
     };
 }]);
 
+// Diretiva para observar mudanças na tabela bootstrap e recarregar a view
+app.directive('tableWatcher', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
+    return {
+        link: function (scope, element, attr) {
+            var last = attr.last;
+            var first = attr.first;
+            if (last === "true") {
+                $timeout(function () {
+                    $('#table_investimentos_sugeridos').bootstrapTable();
+                });
+            }
+        }
+    };
+}]);
+
 //Diretiva para adiconar botão na bootstrap table
 app.directive('buttonTable', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
     return {
@@ -155,6 +170,7 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
     };
 
     $scope.validaLogin = function(){
+        document.cookie = "username=guilherme.albertini@outlook.com";
         $.ajax({
             url: httpRequest.returnConexao() + '/User/GetByEmail',
             type: "GET",
@@ -166,7 +182,37 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
             success: function (data) {
                 $scope.user = data.Content;
                 $scope.$apply();
-                console.log($scope.user);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+}]);
+
+
+
+///GUILHERME
+
+
+
+app.controller('controllerSugeridos', ['$scope', 'ListService', '$rootScope', 'httpRequest', function ($scope, ListService, $rootScope, httpRequest) {
+    var customAlert = new CustomAlert();
+
+    $scope.showMine = true;
+
+    $scope.getUserRisk = function () {
+        $.ajax({
+            url: httpRequest.returnConexao() + '/User/GetByEmail',
+            type: "GET",
+            data: {
+                email: httpRequest.GetCookie("username")
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.getSuggestInvestments(data.Content.IdRiskAvailability);
+                $scope.$apply();
             },
             error: function (data) {
                 console.log(data);
@@ -174,4 +220,91 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
         });
     };
 
+    $scope.getSuggestInvestments = function (typeRisk) {
+        $scope.showMine = true;
+        $.ajax({
+            url: httpRequest.returnConexao() + '/Investment/GetByRisk',
+            type: "GET",
+            data: {
+                idRiskAvailability: typeRisk
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.dadosTabela = data.Content;
+                $scope.$apply();
+                $('#table_investimentos_sugeridos').bootstrapTable('load', data.Content);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
+    $scope.getAllInvestments = function () {
+        $scope.showMine = false;
+        $.ajax({
+            url: httpRequest.returnConexao() + '/Investment/Get',
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.dadosTabela = data.Content;
+                $scope.$apply();
+                $('#table_investimentos_sugeridos').bootstrapTable('load', data.Content);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+}]);
+
+app.controller('controllerFeitos', ['$scope', 'ListService', '$rootScope', 'httpRequest', function ($scope, ListService, $rootScope, httpRequest) {
+    var customAlert = new CustomAlert();
+    
+    $scope.getUserInvestments = function () {
+        $.ajax({
+            url: httpRequest.returnConexao() + '/User/GetByEmail',
+            data: {
+                email: httpRequest.GetCookie("username")
+            },
+            type: "GET",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.getDoneInvestments(data.Content.IdUser);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
+    $scope.getDoneInvestments = function (idUser_) {
+        $.ajax({
+            url: httpRequest.returnConexao() + '/HistoricInvestment/GetByUser',
+            type: "GET",
+            data: {
+                idUser: idUser_
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.dadosTabela = data.Content;
+                $scope.$apply();
+
+                var Investment = [];
+
+                $.each(data.Content, function (index, data) {
+                    Investment.push(data.Investment);
+                });
+
+                $('#table_investimentos_feitos').bootstrapTable('load', Investment);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
 }]);

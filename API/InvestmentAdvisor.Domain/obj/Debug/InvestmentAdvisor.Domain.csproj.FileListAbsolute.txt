@@ -108,3 +108,17 @@ D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Domain\obj\Debug\Inv
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Domain\obj\Debug\InvestmentAdvisor.Domain.csproj.CopyComplete
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Domain\obj\Debug\InvestmentAdvisor.Domain.dll
 D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Domain\obj\Debug\InvestmentAdvisor.Domain.pdb
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\Database\Database.mdf
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\Database\Database_log.ldf
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\InvestmentAdvisor.Domain.dll.config
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\InvestmentAdvisor.Domain.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\InvestmentAdvisor.Domain.pdb
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\InvestmentAdvisor.Data.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\EntityFramework.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\InvestmentAdvisor.Data.pdb
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\InvestmentAdvisor.Data.dll.config
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\bin\Debug\EntityFramework.xml
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\obj\Debug\InvestmentAdvisor.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\obj\Debug\InvestmentAdvisor.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\obj\Debug\InvestmentAdvisor.Domain.dll
+C:\Users\Guilherme\Desktop\Peruana\InvestimentAdvisor\API\InvestmentAdvisor.Domain\obj\Debug\InvestmentAdvisor.Domain.pdb

@@ -13280,7 +13280,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Medei\\.nuget\\packages\\": {},
+    "C:\\Users\\Guilherme\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -13289,17 +13289,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Medei\\Downloads\\Peruana\\InvestimentAdviser\\Web\\Implementação INVAD core.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\Peruana\\InvestimentAdvisor\\Web\\Implementação INVAD core.csproj",
       "projectName": "Implementação INVAD core",
-      "projectPath": "D:\\Medei\\Downloads\\Peruana\\InvestimentAdviser\\Web\\Implementação INVAD core.csproj",
-      "packagesPath": "C:\\Users\\Medei\\.nuget\\packages\\",
-      "outputPath": "D:\\Medei\\Downloads\\Peruana\\InvestimentAdviser\\Web\\obj\\",
+      "projectPath": "C:\\Users\\Guilherme\\Desktop\\Peruana\\InvestimentAdvisor\\Web\\Implementação INVAD core.csproj",
+      "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Guilherme\\Desktop\\Peruana\\InvestimentAdvisor\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Medei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13323,22 +13323,22 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": {
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
-            "version": "[5.2.6, )"
-          },
-          "Microsoft.AspNetCore.All": {
-            "target": "Package",
-            "version": "[2.0.8, )"
+            "version": "2.0.2"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
           },
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
-            "version": "[2.0.2, )"
+            "version": "5.2.6"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.8"
           }
         },
         "imports": [
