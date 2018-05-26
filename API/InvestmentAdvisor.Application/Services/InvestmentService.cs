@@ -40,6 +40,7 @@ namespace InvestmentAdvisor.Application.Services
         public Result<List<Domain.Entities.Investment>> Get()
         {
             Result<List<Domain.Entities.Investment>> result = new Result<List<Domain.Entities.Investment>>();
+            result.Content = new List<Domain.Entities.Investment>();
 
             try
             {

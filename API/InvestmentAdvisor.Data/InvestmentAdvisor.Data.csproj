@@ -101,6 +101,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\HistoricInvestmentRepository.cs" />
     <Compile Include="Repository\InvestmentRepository.cs" />
+    <Compile Include="Repository\RiskAvailabilityRepository.cs" />
+    <Compile Include="Repository\TypeInvestmentRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup />

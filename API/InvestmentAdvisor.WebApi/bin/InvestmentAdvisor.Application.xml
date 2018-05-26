@@ -104,6 +104,72 @@
             
             </summary>
         </member>
+        <member name="T:InvestmentAdvisor.Application.Services.RiskAvailabilityService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.RiskAvailabilityService.#ctor(InvestmentAdvisor.Data.Repository.RiskAvailabilityRepository)">
+            <summary>
+            
+            </summary>
+            <param name="riskAvailabilityRepository"></param>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.RiskAvailabilityService.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.RiskAvailabilityService.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.RiskAvailabilityService.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.RiskAvailabilityService.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:InvestmentAdvisor.Application.Services.TypeInvestmentService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.TypeInvestmentService.#ctor(InvestmentAdvisor.Data.Repository.TypeInvestmentRepository)">
+            <summary>
+            
+            </summary>
+            <param name="typeInvestmentRepository"></param>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.TypeInvestmentService.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.TypeInvestmentService.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.TypeInvestmentService.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.Application.Services.TypeInvestmentService.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:InvestmentAdvisor.Application.Services.UserService">
             <summary>
             

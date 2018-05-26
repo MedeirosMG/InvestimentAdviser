@@ -94,9 +94,9 @@ namespace InvestmentAdvisor.Application.Services
                 result.Content = Converters.ConvertUserToModel(_userRepository.GetByEmail(email));
 
                 if(result.Content == null)
-                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário não existe", null);
+                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário não existe.", null);
                 else
-                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário já existe", result.Content);
+                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário localizado com sucesso.", result.Content);
             }
             catch (Exception ex)
             {
@@ -121,8 +121,10 @@ namespace InvestmentAdvisor.Application.Services
                                  );
 
                 _userRepository.SaveChanges();
-
-                result = Result<Domain.Entities.User>.ReturnMessageCollect("Sucess", result.Content);
+                if(GetByEmail(user.Email) != null)
+                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Usuário já cadastrado.", null);
+                else
+                    result = Result<Domain.Entities.User>.ReturnMessageCollect("Sucess", result.Content);
             }
             catch (Exception ex)
             {

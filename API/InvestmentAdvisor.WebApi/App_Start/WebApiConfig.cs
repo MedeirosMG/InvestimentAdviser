@@ -43,16 +43,6 @@ namespace InvestmentAdvisor.WebApi
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = RouteParameter.Optional }
             );
-
-
-            //habilita a configuração de autorização
-            //config.Filters.Add(new AuthorizeAttribute());
-
-            //habilita o filtro de validação
-            //config.Filters.Add(new ValidateModelAttribute());
-
-            //habilita a validação null objects
-            // config.Filters.Add(new CheckModelForNullAttribute());
         }
 
         private static void EnableCrossSiteRequests(HttpConfiguration config)

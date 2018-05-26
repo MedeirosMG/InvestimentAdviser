@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Implementação Investiment Advisor</title>
+
+    <title>Implementação Investiment Advisor</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -15,9 +16,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </environment>
 </head>
-<body ng-app="MyApp" style="background-color:#e8eaf6">
+<body ng-app="MyApp" style="background-color:#e8eaf6" ng-cloak>
     <nav class="navbar navbar-default navbar-fixed-top" ng-controller="controllerGlobal" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important">
-        <div class="container">
+        <div class="container" ng-init="validaLogin()">
             <div class="row" style="margin-top:10px">
                 <div class="col-md-2">
                     <img src="~/images/Logotipo.png" alt="Visual Studio" class="img-responsive"/> 
@@ -29,11 +30,11 @@
                 </div>
                 <div class="col-md-2">
                     <div class="row" style="margin-top:10px !important">
-                        <div class="col-md-12" ng-if="validaLogin()">
+                        <div class="col-md-12" ng-if="user!=null">
                             <div class="panel panel-default">
                                 <div class="panel-body-md">
                                     <center>
-                                        Olá, Guilherme
+                                        Olá, {{user.Name}}
                                     </center>
                                 </div>
                             </div>
@@ -42,12 +43,12 @@
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                 <li><a href="#">Alterar Cadastro</a></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="#" ng-click="logout()">Logout</a></li>
                                 </ul>
                             </div>
                         </div>    
 
-                        <div class="col-md-12" ng-if="!validaLogin()">
+                        <div class="col-md-12" ng-if="user==null">
                             @Html.ActionLink("Fazer login","Index","Login", null, new {@class="btn btn-default pull-right"})
                         </div>    
                     </div>

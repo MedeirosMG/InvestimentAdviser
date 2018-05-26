@@ -1,0 +1,58 @@
+﻿<div class="container" ng-controller="controllerLogin">
+    <div class="card card-container">
+        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+        <img id="profile-img" class="profile-img-card" src="~/images/avatar.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+
+        <form class="form-signin" name="formLogin">
+            <span id="reauth-email" class="reauth-email"></span>
+
+            <div class="form-group">
+                <span class="text-muted">Nome:</span>
+                <input class="form-control" placeholder="Nome" ng-model="user.Name" required />
+            </div>
+
+            <div class="form-group">
+                <span class="text-muted">E-mail:</span>
+                <input class="form-control" placeholder="E-mail" ng-model="user.Email" required />
+            </div>
+
+            <div class="form-group">
+                <span class="text-muted">Confirmação de E-mail:</span>
+                <input class="form-control" placeholder="Confirmacao de E-mail" ng-model="" required />
+            </div>
+
+            <div class="form-group">
+                <span class="form-group">CPF:</span>
+                <input class="form-control" placeholder="CPF" ng-model="user.Cpf" required />
+            </div>
+
+            <div class="form-group">
+                <span class="text-muted">Número de Filhos:</span>
+                <input class="form-control" placeholder="Numero de filhos" ng-model="user.NumberChildren" />
+            </div>
+
+            <div class="form-group">
+                <span class="text-muted">Volume Disponível:</span>
+                <input class="form-control" placeholder="Volume Disponivel" ng-model="user.VolumAvailable" />
+            </div>
+
+            <div class="form-group">
+                <span class="text-muted">Tipo de Risco:</span>
+                <input class="form-control" style="margin-top:10px" ng-model="user.IdRiskAvailability" />
+            </div>
+
+            <div class="form-group">
+                <span class="text-muted">Senha:</span>
+                <input ng-model="user.Password" class="form-control" placeholder="Senha" required>
+            </div>
+
+            <div class="form-group">
+                <span class="text-muted">Confirmação de Senha</span>
+                <input ng-model="user.loginConfirmarSenha" type="password" class="form-control" placeholder="Confirmacao de Senha" required>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" style="margin-top:10px">Cadastrar</button>            
+        </form><!-- /form -->
+    </div><!-- /card-container -->
+</div><!-- /container -->

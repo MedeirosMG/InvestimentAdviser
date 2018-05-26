@@ -50,8 +50,8 @@
           <Property Name="PASSWORD" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CPF" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="NUMBER_CHILDREN" Type="int" Nullable="false" />
-          <Property Name="VOLUM_AVAILABLE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="NUMBER_CHILDREN" Type="int" />
+          <Property Name="VOLUM_AVAILABLE" Type="decimal" Precision="18" Scale="0" />
           <Property Name="ID_RISK_AVAILABILITY" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT">
@@ -199,8 +199,8 @@
           <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cpf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NumberChildren" Type="Int32" Nullable="false" />
-          <Property Name="VolumAvailable" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="NumberChildren" Type="Int32" />
+          <Property Name="VolumAvailable" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IdRiskAvailability" Type="Int32" Nullable="false" />
           <NavigationProperty Name="HistoricInvestment" Relationship="Self.FK_TB_HISTORIC_INVESTMENT_TB_USER" FromRole="TB_USER" ToRole="TB_HISTORIC_INVESTMENT" />
           <NavigationProperty Name="RiskAvailability" Relationship="Self.FK_TB_USER_TB_RISK_AVAILABILITY" FromRole="TB_USER" ToRole="TB_RISK_AVAILABILITY" />

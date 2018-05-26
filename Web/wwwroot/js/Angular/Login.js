@@ -1,71 +1,30 @@
 app.controller('controllerLogin', ['$scope', 'ListService', '$rootScope', 'httpRequest', function ($scope, ListService, $rootScope, httpRequest) {
     var customAlert = new CustomAlert();
-    $scope.cadastrarUser = false;
     $scope.user = {};
-    $scope.temp = {};
 
-    $scope.validaUsuario = function () {
+    $scope.autenticar = function () {
 
-        $.ajax({
-            url: httpRequest.returnConexao() + '/User/GetByEmail',
-            data: {
-                Email: $scope.temp.loginEmail
-            },
-            type: "GET",
-            dataType: "json",
-            success: function (data) {
-                console.log(data);
-                if (data.success) {
-                    console.log("ok");
-                    $scope.autenticar();
-                }
-                else {
-                    customAlert.alertWarning("Cadastre uma nova senha.")
-                    $scope.cadastrarUser = true;
-                }
-            },
-            error: function (data) {
-                console.log(data);
-            }
-        });
-    };
-
-    $scope.logarSistema = function () {
-        if ($scope.cadastrarUser) {
-            if (typeof $scope.user.loginNovaSenha == "undefined" || typeof $scope.user.loginConfirmarSenha == "undefined" || $scope.user.loginNovaSenha == "" || $scope.user.loginConfirmarSenha == "")
-                return;
-
-            $scope.cadastrarSenha();
-        } else {
-            if (typeof $scope.temp.loginEmail == "undefined" || typeof $scope.temp.loginPassword == "undefined" || $scope.temp.loginEmail == "" || $scope.temp.loginPassword == "") {
-                console.log("ër");
-                return;
-            }
-
-            $scope.validaUsuario();
-        }
-    };
-
-    $scope.cadastrarSenha = function () {
-    };
-
-    $scope.autenticar = function(){
+        if ($scope.loginEmail == undefined || typeof $scope.loginPassword == "undefined" || $scope.loginEmail == "" || $scope.loginPassword == "")
+            return;
 
         $.ajax({
-            url: httpRequest.returnConexao() + '/Login/validaLogin',
-            type: "GET",
-            data: { 
-                email: $scope.loginEmail,
-                password: $scope.loginPassword
-            },
+            url: httpRequest.returnConexao() + '/User/Login',
+            type: "POST",
+            data: JSON.stringify({ 
+                Email: $scope.loginEmail,
+                Password: $scope.loginPassword
+            }),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (data) {
-                if (data.success) {
+                console.log(data);
+                if (data.Success) {
                     customAlert.alertSuccess("Sucesso!", data.message);
                 }
-                else
-                    customAlert.alertError("Erro!", data.message);
+                else {
+                    $scope.erroLogin = data.Messages[0].Content;
+                    $scope.$apply();
+                }
             },
             error: function (data) {
                 console.log(data);

@@ -25,8 +25,8 @@ namespace InvestmentAdvisor.Data.EntityFramework
         public string Password { get; set; }
         public string Email { get; set; }
         public string Cpf { get; set; }
-        public int NumberChildren { get; set; }
-        public decimal VolumAvailable { get; set; }
+        public Nullable<int> NumberChildren { get; set; }
+        public Nullable<decimal> VolumAvailable { get; set; }
         public int IdRiskAvailability { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

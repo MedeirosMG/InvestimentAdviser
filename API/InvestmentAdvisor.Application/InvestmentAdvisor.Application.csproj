@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="Services\HistoricInvestmentService.cs" />
     <Compile Include="Services\InvestmentService.cs" />
+    <Compile Include="Services\RiskAvailabilityService.cs" />
+    <Compile Include="Services\TypeInvestmentService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

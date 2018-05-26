@@ -132,6 +132,50 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:InvestmentAdvisor.WebApi.Controllers.RiskAvailabilityController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.RiskAvailabilityController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.RiskAvailabilityController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.RiskAvailabilityController.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:InvestmentAdvisor.WebApi.Controllers.TypeInvestmentController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.TypeInvestmentController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.TypeInvestmentController.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InvestmentAdvisor.WebApi.Controllers.TypeInvestmentController.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:InvestmentAdvisor.WebApi.Controllers.UserController">
             <summary>
             

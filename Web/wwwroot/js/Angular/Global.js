@@ -46,6 +46,22 @@ Services.service('httpRequest', function () {
         return "http://localhost:49359/api";
     };
 
+    this.GetCookie = function (cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
 });
 
 // Criação do modulo usado na pagina, com injeção do serviço criado anteriormente
@@ -112,9 +128,12 @@ app.directive('selectUpdate', function ($timeout, $rootScope) {
     };
 });
 
-app.controller('controllerGlobal', ['$scope', 'ListService','$rootScope', function ($scope, ListService, $rootScope) {
-    
+app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'httpRequest', function ($scope, ListService, $rootScope, httpRequest) {
+    var customAlert = new CustomAlert();
     $scope.linkAtivo = -1;
+    $scope.user = null;
+
+    document.cookie = "username=medeiros_mg@hotmail.com";
 
     //Verifica o link atual para atualizar o selecionado na view 
     $scope.validaLink = function(){
@@ -129,8 +148,30 @@ app.controller('controllerGlobal', ['$scope', 'ListService','$rootScope', functi
 
     };
 
+    $scope.logout = function () {
+        document.cookie = "username=logoff";
+        $scope.validaLogin();
+        console.log("ok");
+    };
+
     $scope.validaLogin = function(){
-        return false;
+        $.ajax({
+            url: httpRequest.returnConexao() + '/User/GetByEmail',
+            type: "GET",
+            data: {
+                email: httpRequest.GetCookie("username")
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                $scope.user = data.Content;
+                $scope.$apply();
+                console.log($scope.user);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
     };
 
 }]);

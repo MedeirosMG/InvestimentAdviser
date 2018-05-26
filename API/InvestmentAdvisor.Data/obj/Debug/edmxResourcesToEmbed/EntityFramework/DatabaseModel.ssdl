@@ -45,8 +45,8 @@
     <Property Name="PASSWORD" Type="varchar" MaxLength="64" Nullable="false" />
     <Property Name="EMAIL" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="CPF" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="NUMBER_CHILDREN" Type="int" Nullable="false" />
-    <Property Name="VOLUM_AVAILABLE" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="NUMBER_CHILDREN" Type="int" />
+    <Property Name="VOLUM_AVAILABLE" Type="decimal" Precision="18" Scale="0" />
     <Property Name="ID_RISK_AVAILABILITY" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT">

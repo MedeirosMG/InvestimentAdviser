@@ -1,4 +1,5 @@
 using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace mvc.Controllers
         {
             return View();
         }
+
+        public ActionResult Cadastro()
+        {
+            return View();
+        }
+
         [HttpGet]
         public JsonResult validaLogin(string email, string password){
 

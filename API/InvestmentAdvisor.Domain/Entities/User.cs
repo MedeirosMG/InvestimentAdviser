@@ -39,12 +39,12 @@ namespace InvestmentAdvisor.Domain.Entities
         /// <summary>
         /// 
         /// </summary>
-        public int NumberChildren { get; set; }
+        public Nullable<int> NumberChildren { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public decimal VolumAvailable { get; set; }
+        public Nullable<decimal> VolumAvailable { get; set; }
 
         /// <summary>
         /// 

@@ -20,3 +20,14 @@ D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implemen
 D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.AssemblyInfo.cs
 D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.dll
 D:\Medei\Desktop\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.pdb
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\bin\Debug\netcoreapp2.0\Implementação INVAD core.deps.json
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\bin\Debug\netcoreapp2.0\Implementação INVAD core.runtimeconfig.json
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\bin\Debug\netcoreapp2.0\Implementação INVAD core.runtimeconfig.dev.json
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\bin\Debug\netcoreapp2.0\Implementação INVAD core.dll
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\bin\Debug\netcoreapp2.0\Implementação INVAD core.pdb
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.csprojResolveAssemblyReference.cache
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.csproj.CoreCompileInputs.cache
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.AssemblyInfoInputs.cache
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.AssemblyInfo.cs
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.dll
+D:\Medei\Downloads\Peruana\InvestimentAdviser\Web\obj\Debug\netcoreapp2.0\Implementação INVAD core.pdb

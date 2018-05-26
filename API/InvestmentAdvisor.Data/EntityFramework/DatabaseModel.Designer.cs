@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Projetos\InvestmentAdvisor_v2\InvestmentAdvisor.Data\EntityFramework\DatabaseModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Projetos\InvestimentAdvisor-master\API\InvestmentAdvisor.Data\EntityFramework\DatabaseModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

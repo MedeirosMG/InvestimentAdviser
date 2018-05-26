@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ea27aa621cc41b8b74cb773af9a965c" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.HistoricInvestment" Width="1.5" PointX="9.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Investment" Width="1.5" PointX="4.25" PointY="1.5" IsExpanded="true" />
+      <Diagram DiagramId="e882b9b79a43494eaebd933e7709790e" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.HistoricInvestment" Width="1.5" PointX="8.875" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Investment" Width="1.5" PointX="6.25" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.RiskAvailability" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.TypeInvestment" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.User" Width="1.5" PointX="4.875" PointY="5.125" IsExpanded="true" />
         <AssociationConnector Association="DatabaseModel.FK_TB_HISTORIC_INVESTMENT_TB_INVESTMENT" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK_TB_HISTORIC_INVESTMENT_TB_USER" ManuallyRouted="false" />
         <AssociationConnector Association="DatabaseModel.FK_TB_INVESTMENT_TB_RISK_AVAILABILITY" ManuallyRouted="false" />

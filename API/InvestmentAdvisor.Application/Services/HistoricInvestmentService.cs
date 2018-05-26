@@ -40,6 +40,7 @@ namespace InvestmentAdvisor.Application.Services
         public Result<List<Domain.Entities.HistoricInvestment>> Get()
         {
             Result<List<Domain.Entities.HistoricInvestment>> result = new Result<List<Domain.Entities.HistoricInvestment>>();
+            result.Content = new List<Domain.Entities.HistoricInvestment>();
 
             try
             {
@@ -114,6 +115,7 @@ namespace InvestmentAdvisor.Application.Services
         public Result<List<Domain.Entities.HistoricInvestment>> GetByUser(int idUser)
         {
             Result<List<Domain.Entities.HistoricInvestment>> result = new Result<List<Domain.Entities.HistoricInvestment>>();
+            result.Content = new List<Domain.Entities.HistoricInvestment>();
 
             try
             {
