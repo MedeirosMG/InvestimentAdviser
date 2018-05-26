@@ -181,6 +181,7 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
             dataType: "json",
             success: function (data) {
                 $scope.user = data.Content;
+                $scope.userAlterar = data.Content;
                 $scope.$apply();
             },
             error: function (data) {
@@ -188,6 +189,39 @@ app.controller('controllerGlobal', ['$scope', 'ListService', '$rootScope', 'http
             }
         });
     };
+
+    $scope.alterarCadastro = function () {
+        $('#alterarCadastro').modal();
+    };
+
+    $scope.salvarAlterarCadastro = function () {
+        var novoUser = {
+
+            IdUser: $scope.userAlterar.IdUser,
+            Name: $('#novoNome').val(),
+            Email: $('#novoEmail').val(),
+            Cpf: $('#novoCPF').val(),
+            NumberChildren: $('#novoNC').val(),
+            VolumAvailable: $('#novoVolume').val()
+        };
+
+        $.ajax({
+            url: httpRequest.returnConexao() + '/User/Update',
+            type: "GET",
+            data: novoUser,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                customAlert.alertSuccess("Sucesso!", "Cadastro alterado com sucesso!");
+                $scope.$apply();
+                $('#alterarCadastro').modal('close');
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    };
+
 }]);
 
 

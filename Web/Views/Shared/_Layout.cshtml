@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </environment>
 </head>
-<body ng-app="MyApp" style="background-color:#e8eaf6" ng-cloak>
-    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="controllerGlobal" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important">
+<body ng-app="MyApp" style="background-color:#e8eaf6" ng-controller="controllerGlobal" ng-cloak>
+    <nav class="navbar navbar-default navbar-fixed-top"  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important">
         <div class="container" ng-init="validaLogin()">
             <div class="row" style="margin-top:10px">
                 <div class="col-md-2">
@@ -42,7 +42,7 @@
                                 <button class="btn btn-xs btn-default dropdown-toggle" type="button" data-toggle="dropdown">Meu perfil
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                <li><a href="#">Alterar Cadastro</a></li>
+                                <li><a ng-click="alterarCadastro()">Alterar Cadastro</a></li>
                                 <li><a href="#" ng-click="logout()">Logout</a></li>
                                 </ul>
                             </div>
@@ -77,6 +77,50 @@
     <div class="container-fluid" style="padding-top:160px;margin-top:50px">
         @RenderBody()
         <hr />
+        <!-- Modal -->
+        <div class="modal fade" id="alterarCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLabel">Alterar Cadastro</h3>
+                        
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Nome</label>
+                                    <input type="text" id="novoNome" class="form-control" placeholder="{{userAlterar.Name}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="text" id="novoEmail" class="form-control" placeholder="{{userAlterar.Email}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>CPF</label>
+                                    <input type="text" id="novoCPF" class="form-control" placeholder="{{userAlterar.Cpf}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Numero de filhos</label>
+                                    <input type="text" id="novoNC" class="form-control" placeholder="{{userAlterar.NumberChildren}}"/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Volume disponível</label>
+                                    <input type="text" id="novoVolume" class="form-control" placeholder="{{userAlterar.VolumAvailable}}"/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" ng-click="salvarAlterarCadastro()">Salvar alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer>
             <div class="row">
                 <div class="col-md-8">
